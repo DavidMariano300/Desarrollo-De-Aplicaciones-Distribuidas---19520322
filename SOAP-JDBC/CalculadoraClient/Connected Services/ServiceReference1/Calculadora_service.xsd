@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://server/" targetNamespace="http://server/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="division" type="tns:division" />
+  <xs:element name="divisionResponse" type="tns:divisionResponse" />
+  <xs:element name="multiplicacion" type="tns:multiplicacion" />
+  <xs:element name="multiplicacionResponse" type="tns:multiplicacionResponse" />
+  <xs:element name="potencia" type="tns:potencia" />
+  <xs:element name="potenciaResponse" type="tns:potenciaResponse" />
+  <xs:element name="raiz" type="tns:raiz" />
+  <xs:element name="raizResponse" type="tns:raizResponse" />
+  <xs:element name="resta" type="tns:resta" />
+  <xs:element name="restaResponse" type="tns:restaResponse" />
+  <xs:element name="suma" type="tns:suma" />
+  <xs:element name="sumaResponse" type="tns:sumaResponse" />
+  <xs:complexType name="resta">
+    <xs:sequence>
+      <xs:element name="c" type="xs:double" />
+      <xs:element name="d" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="restaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="raiz">
+    <xs:sequence>
+      <xs:element name="k" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="raizResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="suma">
+    <xs:sequence>
+      <xs:element name="a" type="xs:double" />
+      <xs:element name="b" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sumaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="division">
+    <xs:sequence>
+      <xs:element name="g" type="xs:double" />
+      <xs:element name="h" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="divisionResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="potencia">
+    <xs:sequence>
+      <xs:element name="i" type="xs:double" />
+      <xs:element name="j" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="potenciaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="multiplicacion">
+    <xs:sequence>
+      <xs:element name="e" type="xs:double" />
+      <xs:element name="f" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="multiplicacionResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
