@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://server/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="Calculadora_service" targetNamespace="http://server/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://192.168.231.19:8086/Calculadora/Calculadora_service?xsd=1" namespace="http://server/" />
+    </xsd:schema>
+  </types>
+  <message name="potencia">
+    <part name="parameters" element="tns:potencia" />
+  </message>
+  <message name="potenciaResponse">
+    <part name="parameters" element="tns:potenciaResponse" />
+  </message>
+  <message name="suma">
+    <part name="parameters" element="tns:suma" />
+  </message>
+  <message name="sumaResponse">
+    <part name="parameters" element="tns:sumaResponse" />
+  </message>
+  <message name="resta">
+    <part name="parameters" element="tns:resta" />
+  </message>
+  <message name="restaResponse">
+    <part name="parameters" element="tns:restaResponse" />
+  </message>
+  <message name="multiplicacion">
+    <part name="parameters" element="tns:multiplicacion" />
+  </message>
+  <message name="multiplicacionResponse">
+    <part name="parameters" element="tns:multiplicacionResponse" />
+  </message>
+  <message name="division">
+    <part name="parameters" element="tns:division" />
+  </message>
+  <message name="divisionResponse">
+    <part name="parameters" element="tns:divisionResponse" />
+  </message>
+  <message name="raiz">
+    <part name="parameters" element="tns:raiz" />
+  </message>
+  <message name="raizResponse">
+    <part name="parameters" element="tns:raizResponse" />
+  </message>
+  <portType name="Calculadora_service">
+    <operation name="potencia">
+      <input wsam:Action="http://server/Calculadora_service/potenciaRequest" message="tns:potencia" />
+      <output wsam:Action="http://server/Calculadora_service/potenciaResponse" message="tns:potenciaResponse" />
+    </operation>
+    <operation name="suma">
+      <input wsam:Action="http://server/Calculadora_service/sumaRequest" message="tns:suma" />
+      <output wsam:Action="http://server/Calculadora_service/sumaResponse" message="tns:sumaResponse" />
+    </operation>
+    <operation name="resta">
+      <input wsam:Action="http://server/Calculadora_service/restaRequest" message="tns:resta" />
+      <output wsam:Action="http://server/Calculadora_service/restaResponse" message="tns:restaResponse" />
+    </operation>
+    <operation name="multiplicacion">
+      <input wsam:Action="http://server/Calculadora_service/multiplicacionRequest" message="tns:multiplicacion" />
+      <output wsam:Action="http://server/Calculadora_service/multiplicacionResponse" message="tns:multiplicacionResponse" />
+    </operation>
+    <operation name="division">
+      <input wsam:Action="http://server/Calculadora_service/divisionRequest" message="tns:division" />
+      <output wsam:Action="http://server/Calculadora_service/divisionResponse" message="tns:divisionResponse" />
+    </operation>
+    <operation name="raiz">
+      <input wsam:Action="http://server/Calculadora_service/raizRequest" message="tns:raiz" />
+      <output wsam:Action="http://server/Calculadora_service/raizResponse" message="tns:raizResponse" />
+    </operation>
+  </portType>
+  <binding name="Calculadora_servicePortBinding" type="tns:Calculadora_service">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="potencia">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="suma">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="resta">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="multiplicacion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="division">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="raiz">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="Calculadora_service">
+    <port name="Calculadora_servicePort" binding="tns:Calculadora_servicePortBinding">
+      <soap:address location="http://192.168.231.19:8086/Calculadora/Calculadora_service" />
+    </port>
+  </service>
+</definitions>
