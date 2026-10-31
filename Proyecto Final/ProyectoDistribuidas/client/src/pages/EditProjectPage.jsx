@@ -17,7 +17,6 @@ export function EditarProjectPage() {// Cambiado para reflejar operaciones de pr
             try {
                 const respuesta = await fetch(`${serverUrl}/ObtenerProUnic?iduser=${user.id}&idpro=${id}`);
                 const textoRespuesta = await respuesta.text();
-                console.log({ textoRespuesta })
 
                 // Dividir la cadena en líneas y luego en proyectos
                 const proyectosArray = textoRespuesta.split('|').filter(Boolean).map((dato, index, array) => {
@@ -46,7 +45,6 @@ export function EditarProjectPage() {// Cambiado para reflejar operaciones de pr
         try {
             const respuesta = await fetch(`${serverUrl}/actualizarPro?iduser=${user.id}&idpro=${id}&desc=${projectName}`);
             const textoRespuesta = await respuesta.text();
-            console.log(textoRespuesta);
 
             if (respuesta.ok) {
                 navigate("/tasks");

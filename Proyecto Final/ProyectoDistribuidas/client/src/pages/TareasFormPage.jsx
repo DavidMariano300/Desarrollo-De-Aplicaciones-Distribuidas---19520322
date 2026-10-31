@@ -21,7 +21,6 @@ export function TareasFormPage() {// Cambiado para reflejar operaciones de proye
         try {
             const respuesta = await fetch(`${serverUrl}/insertarTar?idpro=${id}&nom=${tareaName}&desc=${tareaDesc}&det=${tareaDet}`);
             const textoRespuesta = await respuesta.text();
-            console.log(textoRespuesta);
 
             if (respuesta.ok) {
                 navigate(`/abrir-tareas/${id}`);

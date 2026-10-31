@@ -27,7 +27,6 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/dist"));
 
   app.get("*", (req, res) => {
-    console.log(path.resolve("client", "dist", "index.html") );
     res.sendFile(path.resolve("client", "dist", "index.html"));
   });
 }

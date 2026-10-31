@@ -19,8 +19,6 @@ export function TareasPage() {
       try {
         const respuesta = await fetch(`${serverUrl}/ObtenerTarUs?iduser=${user.id}&idpro=${id}`);
         const textoRespuesta = await respuesta.text();
-        console.log({ textoRespuesta })
-        console.log({id});
 
         // Dividir la cadena en líneas y luego en proyectos
         const proyectosArray = textoRespuesta.split('|').filter(Boolean).map((dato, index, array) => {
@@ -47,17 +45,14 @@ export function TareasPage() {
 
   const handleEdit = (idProyecto) => {
     // Lógica para abrir el proyecto con el ID especificado
-    console.log(`Abrir proyecto con ID: ${idProyecto}`);
     navigate(`/editar-tareas/${idProyecto}`);// Redirección a la página de edición
   };
 
   const handleDelete = async (idProyecto) =>{
     // Lógica para eliminar el proyecto con el ID especificado
-    console.log(`Eliminar proyecto con ID: ${idProyecto}`);
     try {
       const respuesta = await fetch(`${serverUrl}/borrarTar?idtar=${idProyecto}&idpro=${id}`);
       const textoRespuesta = await respuesta.text();
-      console.log({ textoRespuesta })
       window.location.reload();
 
     } catch (error) {
@@ -66,12 +61,10 @@ export function TareasPage() {
   };
 
   const handleAbrir = (idProyecto) => {
-    console.log(`Abrir ${idProyecto}`);
     navigate(`/add-tarea/${idProyecto}`);
   }
 
   const handleAgregar = (idProyecto) => {
-    console.log(`Abrir ${idProyecto}`);
     navigate(`/add-tarea/${idProyecto}`);
   }
 

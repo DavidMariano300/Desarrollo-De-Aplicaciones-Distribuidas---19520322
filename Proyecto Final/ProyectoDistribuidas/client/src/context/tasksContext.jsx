@@ -28,16 +28,15 @@ export function TaskProvider({ children }) {
       const res = await deleteTaskRequest(id);
       if (res.status === 204) setTasks(tasks.filter((task) => task._id !== id));
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 
   const createTask = async (task) => {
     try {
       const res = await createTaskRequest(task);
-      console.log(res.data);
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 

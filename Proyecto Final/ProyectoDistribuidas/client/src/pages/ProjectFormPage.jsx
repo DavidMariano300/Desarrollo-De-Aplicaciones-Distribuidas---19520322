@@ -17,7 +17,6 @@ export function ProjectFormPage() {// Cambiado para reflejar operaciones de proy
     try {
       const respuesta = await fetch(`${serverUrl}/insertarPro?iduser=${user.id}&desc=${projectName}`);
       const textoRespuesta = await respuesta.text();
-      console.log(textoRespuesta);
 
       if (respuesta.ok) {
         navigate("/tasks");

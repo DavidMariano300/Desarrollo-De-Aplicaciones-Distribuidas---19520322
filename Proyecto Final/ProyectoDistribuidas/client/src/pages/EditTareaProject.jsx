@@ -22,7 +22,6 @@ export function EditTareaProject() {// Cambiado para reflejar operaciones de pro
             try {
                 const respuesta = await fetch(`${serverUrl}/ObtenerTarUnic?idpro=${id}`);
                 const textoRespuesta = await respuesta.text();
-                console.log({ textoRespuesta })
 
                 // Dividir la cadena en líneas y luego en proyectos
                 const proyectosArray = textoRespuesta.split('|').filter(Boolean).map((dato, index, array) => {
@@ -53,7 +52,6 @@ export function EditTareaProject() {// Cambiado para reflejar operaciones de pro
         try {
             const respuesta = await fetch(`${serverUrl}/actualizarTar?idtar=${id}&idpro=8&nom=${tareaNombre}&desc=${tareaDesc}&det=${tareaDet}`);
             const textoRespuesta = await respuesta.text();
-            console.log(textoRespuesta);
 
             if (respuesta.ok) {
                 navigate("/tasks");
