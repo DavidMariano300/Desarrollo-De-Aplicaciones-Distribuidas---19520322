@@ -76,7 +76,6 @@ public class ControlEscolarClient extends JFrame {
 
         // Conectar con el servidor RMI
         try {
-            //controlEscolar = (IControlEscolar) Naming.lookup("rmi://localhost/ControlEscolarService");
             controlEscolar = (IControlEscolar) Naming.lookup("rmi://192.168.228.79/ControlEscolarService");
             actualizarListaAlumnos();
         } catch (Exception e) {
