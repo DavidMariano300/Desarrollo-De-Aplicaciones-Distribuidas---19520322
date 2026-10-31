@@ -1,22 +1,5 @@
-### MERN Stack CRUD with JWT
+# TaskZen
 
-This is a web application project using React, with a Nodejs Backend using Express and Mongodb as Database (MERN Stack)
+Gestor de proyectos y tareas con registro e inicio de sesión (React, Node.js, Express, MongoDB, JWT). Instrucciones de instalación y ejemplo de uso en el [README principal](../../README.md#cómo-ejecutar).
 
-### Installation with docker-compose (Recommended)
-
-```sh
-docker-compose up -d
-npm run dev
-```
-
-### Deployment
-
-```sh
-git clone https://github.com/FaztWeb/mern-tasks-auth
-cd mern-tasks-auth
-npm i
-npm run build
-npm start
-```
-
-> You need to have a Mongodb database running
+La base de autenticación y tareas parte del tutorial *MERN Tasks Auth* de FaztWeb.
