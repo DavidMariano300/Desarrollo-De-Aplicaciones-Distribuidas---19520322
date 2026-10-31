@@ -1,0 +1,29 @@
+# Dependencias
+node_modules/
+packages/
+
+# Compilados y artefactos
+dist/
+build/
+bin/
+obj/
+*.class
+*.jar
+*.war
+*.rar
+
+# IDE y sistema
+.idea/
+.vs/
+.vscode/
+nbproject/private/
+*.user
+.DS_Store
+Thumbs.db
+
+# Python y notebooks
+__pycache__/
+.ipynb_checkpoints/
+
+# Secretos
+.env
