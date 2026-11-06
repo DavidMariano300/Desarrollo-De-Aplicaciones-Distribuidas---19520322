@@ -1,19 +1,19 @@
-# Desarrollo de Aplicaciones Distribuidas
+# Distributed Application Development
 
-Prácticas de la materia Desarrollo de Aplicaciones Distribuidas (Instituto Tecnológico de Chilpancingo, TecNM, 2023). Cada carpeta implementa el mismo problema de fondo, un cliente que consume un servicio remoto, con un mecanismo de comunicación distinto.
+Coursework for the Distributed Application Development class (Instituto Tecnológico de Chilpancingo, TecNM, 2023). Each folder implements the same underlying problem, a client consuming a remote service, with a different communication mechanism.
 
-| Carpeta | Qué hace | Tecnologías |
+| Folder | What it does | Technologies |
 |---|---|---|
-| `RMI-JDBC/` | Control escolar: alta, edición, baja y consulta de alumnos mediante objetos remotos | Java RMI, JDBC, MySQL |
-| `REST-JDBC/` | Calculadora expuesta como servicio REST que registra cada operación en la base | Java JAX-RS, GlassFish, MySQL |
-| `SOAP-JDBC/` | Calculadora como servicio SOAP y un cliente web que la consume | Java JAX-WS, ASP.NET Web Forms (C#), MySQL |
-| `GraphQL/` | CRUD de personas con un servidor GraphQL y un cliente React | Node.js, Apollo Server, Express, MongoDB, React |
-| `Proyecto Final/` | TaskZen: gestor de proyectos y tareas con registro e inicio de sesión | React (Vite), Node.js, Express, MongoDB, JWT, Zod |
-| `Notebooks/` | Tutorial de Gemini File Search (RAG gestionado por Google) | Python, Google Gen AI SDK, Colab |
+| `RMI-JDBC/` | School records: create, edit, delete and look up students through remote objects | Java RMI, JDBC, MySQL |
+| `REST-JDBC/` | Calculator exposed as a REST service that logs each operation in the database | Java JAX-RS, GlassFish, MySQL |
+| `SOAP-JDBC/` | Calculator as a SOAP service and a web client that consumes it | Java JAX-WS, ASP.NET Web Forms (C#), MySQL |
+| `GraphQL/` | CRUD for people with a GraphQL server and a React client | Node.js, Apollo Server, Express, MongoDB, React |
+| `Proyecto Final/` | TaskZen: project and task manager with sign-up and login | React (Vite), Node.js, Express, MongoDB, JWT, Zod |
+| `Notebooks/` | Tutorial on Gemini File Search (RAG managed by Google) | Python, Google Gen AI SDK, Colab |
 
-## Cómo ejecutar
+## How to run
 
-Cada práctica es independiente. Requisitos generales: Java 17 y NetBeans con GlassFish para las prácticas Java, Visual Studio para el cliente C#, Node.js 18 o superior y MongoDB (o Docker) para las de JavaScript.
+Each assignment is independent. General requirements: Java 17 and NetBeans with GlassFish for the Java assignments, Visual Studio for the C# client, and Node.js 18 or later plus MongoDB (or Docker) for the JavaScript ones.
 
 **GraphQL**
 
@@ -31,16 +31,16 @@ mutation {
 query { mostrar { id nombre apellidos pais } }
 ```
 
-**Proyecto Final (TaskZen)**
+**Final project (TaskZen)**
 
 ```bash
 cd "Proyecto Final/ProyectoDistribuidas"
-cp .env.template .env        # define MONGODB_URI y TOKEN_SECRET
-docker compose up -d         # MongoDB local
-npm install && npm run dev   # API en http://localhost:4000
+cp .env.template .env        # set MONGODB_URI and TOKEN_SECRET
+docker compose up -d         # local MongoDB
+npm install && npm run dev   # API at http://localhost:4000
 
 cd client
-npm install && npm run dev   # interfaz en http://localhost:5173
+npm install && npm run dev   # interface at http://localhost:5173
 ```
 
 ```bash
@@ -49,20 +49,20 @@ curl -X POST http://localhost:4000/api/auth/register \
   -d '{"username":"demo","email":"demo@example.com","password":"demo123"}'
 ```
 
-La autenticación y las tareas usan la API de Node. Las vistas de proyectos y tareas por proyecto consumen además un servicio REST en Java (`localhost:8080/AppDistRest`) que no forma parte de este repositorio.
+Authentication and tasks use the Node API. The project views and per-project tasks also consume a Java REST service (`localhost:8080/AppDistRest`) that isn't part of this repository.
 
 **RMI**
 
 ```bash
 cd RMI-JDBC/rmijdbc/src
-export MYSQL_PASSWORD=...    # contraseña de tu MySQL local
+export MYSQL_PASSWORD=...    # your local MySQL password
 javac *.java
-java ControlEscolarServer    # en una terminal
-java ControlEscolarClient    # en otra
+java ControlEscolarServer    # in one terminal
+java ControlEscolarClient    # in another
 ```
 
-El cliente busca el servidor en una IP de la red del laboratorio. Para probar en una sola máquina, cambia esa dirección por `localhost` en `ControlEscolarClient.java`.
+The client looks for the server at an IP address on the lab network. To test on a single machine, change that address to `localhost` in `ControlEscolarClient.java`.
 
-## Créditos
+## Credits
 
-La base de autenticación y tareas del Proyecto Final parte del tutorial *MERN Tasks Auth* de FaztWeb; sobre ella el equipo agregó proyectos, tareas por proyecto y la integración con el servicio REST. Proyecto en equipo de tres integrantes.
+The authentication and task base of the final project starts from FaztWeb's *MERN Tasks Auth* tutorial; on top of it, the team added projects, per-project tasks and the integration with the REST service. Team project with three members.
